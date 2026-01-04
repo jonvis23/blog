@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CTF on Elvis Ouya</title>
+    <link>//localhost:51050/tags/ctf/</link>
+    <description>Recent content in CTF on Elvis Ouya</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>jonvis113@gmail.com (Elvis Ouya)</managingEditor>
+    <webMaster>jonvis113@gmail.com (Elvis Ouya)</webMaster>
+    <copyright>Fine</copyright>
+    <atom:link href="//localhost:51050/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    
+  </channel>
+</rss>

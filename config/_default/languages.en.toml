@@ -1,0 +1,29 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "Elvis Ouya"
+
+[params]
+  displayName = "EN"
+  isoCode = "en"
+  rtl = false
+  dateFormat = "2 January 2006"
+  logo = "🔥"
+  # secondaryLogo = "img/secondary-logo.png"
+  # description = "My awesome website"
+  copyright = "I ❤️ TECH"
+
+[params.author]
+  name = "Elvis Ouya"
+  email = "jonvis113@gmail.com"
+  image = "img/pfp.jpeg"
+  imageQuality = 98
+  headline = "Cloud | Network | Cybersecurity"
+  bio = "Security Engineer"
+  links = [
+    { email = "mailto:jonvis113@gmail.com" },
+    { github = "https://github.com/jonvis23" },
+    { linkedin = "https://www.linkedin.com/in/jelvis23" },
+    { medium = "https://medium.com/@jonelvis" },
+  ]
