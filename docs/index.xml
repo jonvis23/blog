@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on Elvis Ouya</title>
+    <link>//localhost:55289/docs/</link>
+    <description>Recent content in Docs on Elvis Ouya</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>jonvis113@gmail.com (Elvis Ouya)</managingEditor>
+    <webMaster>jonvis113@gmail.com (Elvis Ouya)</webMaster>
+    <copyright>Fine</copyright>
+    <lastBuildDate>Sat, 03 Jan 2026 17:32:24 +0300</lastBuildDate><atom:link href="//localhost:55289/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Test</title>
+      <link>//localhost:55289/docs/test/</link>
+      <pubDate>Sat, 03 Jan 2026 17:32:24 +0300</pubDate>
+      <author>jonvis113@gmail.com (Elvis Ouya)</author>
+      <guid>//localhost:55289/docs/test/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
