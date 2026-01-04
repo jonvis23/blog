@@ -1,0 +1,31 @@
+{{- /*
+Shortcode: credly
+Parameters:
+ - id (required): Credly badge id
+ - width (optional): iframe width (default 150)
+ - height (optional): iframe height (default 270)
+*/ -}}
+{{ $id := .Get "id" | default "" }}
+{{ $width := .Get "width" | default "150" }}
+{{ $height := .Get "height" | default "270" }}
+
+{{ if not $id }}
+  <!-- credly shortcode: missing `id` parameter -->
+  <span class="credly-badge-missing">Badge ID missing</span>
+{{ else }}
+  <div class="credly-badge-wrapper" style="--credly-width: {{ $width }}px; --credly-height: {{ $height }}px;">
+    <div class="credly-badge-container">
+      <div class="credly-badge" data-share-badge-id="{{ $id }}" data-share-badge-host="https://www.credly.com" data-iframe-width="{{ $width }}" data-iframe-height="{{ $height }}"></div>
+      <noscript>
+        <iframe class="credly-badge-iframe"
+                src="https://www.credly.com/badges/{{ $id }}/embed"
+                width="{{ $width }}"
+                height="{{ $height }}"
+                title="Credly badge"
+                frameborder="0"
+                scrolling="no"></iframe>
+      </noscript>
+    </div>
+    {{ partial "credly-script.html" . }}
+  </div>
+{{ end }}

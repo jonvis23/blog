@@ -1,0 +1,8 @@
+{{/* Partial: credly-script.html
+   Ensures the Credly embed script is included only once per page render.
+*/}}
+{{ $flag := "credlyScriptIncluded" }}
+{{ if not ($.Scratch.Get $flag) }}
+  <script async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
+  {{ $.Scratch.Set $flag true }}
+{{ end }}

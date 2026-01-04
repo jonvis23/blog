@@ -1,0 +1,120 @@
+/* Credly badge styles - isolated and theme-aware */
+.credly-badge-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+.credly-badge-container {
+  --bg-dark: rgba(255,255,255,0.02);
+  --bg-light: #ffffff;
+  --shadow-dark: 0 6px 18px rgba(2,6,23,0.6);
+  --shadow-light: 0 6px 18px rgba(16,24,40,0.06);
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 0.6rem;
+  background-color: var(--bg-dark);
+  box-shadow: var(--shadow-dark);
+  /* allow hover zoom to overlap neighbors */
+  overflow: visible;
+  width: var(--credly-width, 150px);
+  /* add extra vertical space so badge labels are visible */
+  height: calc(var(--credly-height, 270px) + 48px);
+  display: grid;
+  place-items: center;
+  transition: width 360ms cubic-bezier(.2,.8,.2,1), box-shadow 360ms cubic-bezier(.2,.8,.2,1), transform 360ms cubic-bezier(.2,.8,.2,1);
+  position: relative;
+}
+
+html[data-theme='light'] .credly-badge-container {
+  background-color: var(--bg-light);
+  box-shadow: var(--shadow-light);
+}
+
+.credly-badge-container .credly-badge,
+.credly-badge-container iframe,
+.credly-badge-container .credly-badge-iframe {
+  width: 100% !important;
+  /* let iframe fill the visual badge area but keep extra space for captions */
+  height: calc(var(--credly-height, 270px)) !important;
+  border: 0 !important;
+  transform: none;
+  display: block;
+  transition: box-shadow 420ms cubic-bezier(.2,.8,.2,1);
+}
+
+.credly-badge-container .credly-badge {
+  /* keep Credly script rendering contained */
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Zoom interaction to reveal full title and details */
+.credly-badge-container:hover,
+.credly-badge-container:focus-within {
+  transform: translateY(-6px);
+  z-index: 40;
+  box-shadow: 0 12px 34px rgba(2,6,23,0.45);
+  /* expand width to reveal full titles */
+  width: calc(1.32 * var(--credly-width, 150px));
+}
+
+.credly-badge-container:hover .credly-badge,
+.credly-badge-container:focus-within .credly-badge,
+.credly-badge-container:hover iframe,
+.credly-badge-container:focus-within iframe {
+  transform: none;
+}
+
+/* Ensure expansion doesn't overflow viewport on small screens */
+@media (max-width: 880px) {
+  .credly-badges-row {
+    justify-content: center;
+    gap: 0.6rem;
+  }
+  .credly-badge-container:hover,
+  .credly-badge-container:focus-within {
+    width: calc(1.08 * var(--credly-width, 150px));
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 520px) {
+  .credly-badges-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .credly-badge-container,
+  .credly-badge-container:hover,
+  .credly-badge-container:focus-within {
+    width: var(--credly-width, 150px);
+  }
+}
+
+.credly-badge-missing {
+  color: #e11d48;
+  font-weight: 600;
+}
+
+/* Horizontal row for multiple Credly badges */
+.credly-badges-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0.75rem 0;
+}
+
+.credly-badges-row .credly-badge-wrapper {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .credly-badges-row {
+    gap: 0.5rem;
+  }
+  .credly-badges-row .credly-badge-container {
+    transform: none;
+  }
+}
