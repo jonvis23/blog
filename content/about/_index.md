@@ -60,11 +60,22 @@ _January 2023 to August 2023_
 ## Certifications
 
 <div class="credly-badges-row">
-{{< credly id="b4a37126-8cec-4b59-b921-ef7453fb879d" width="150" height="270" >}}
-{{< credly id="3115601e-a4ae-46e7-99dd-bf81f39b7f0b" width="150" height="270" >}}
-{{< credly id="12e8c514-451a-44dd-8b16-2a89671b31b8" width="150" height="270" >}}
-<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="54e5c226-ae86-4598-a793-f1de14055183" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="54e5c226-ae86-4598-a793-f1de14055183" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script> <!-- Fortinet-->
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="12e8c514-451a-44dd-8b16-2a89671b31b8" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script><!-- Fortinet-->
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="26c09279-3f99-454f-b2f5-292054cbfb12" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script><!-- CCP-->
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="06c672e8-f0d0-4c02-b352-4146b59327bb" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script><!-- CCNA Intro-->
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="b5fe1cf6-1c2e-4e45-8037-d9dd3511e910" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script><!-- SRWE-->
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="3115601e-a4ae-46e7-99dd-bf81f39b7f0b" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="8c6dcbbd-bde4-4053-93c0-a3d31fef7ecf" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script><!-- Intro to cybersec-->
+
+
+
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="732d0289-192c-4ae4-908e-72689b9dc0b1" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+
+
 
 
 ** Cisco Certified Network Associate Security (CCNA) **

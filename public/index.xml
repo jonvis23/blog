@@ -2,23 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Elvis Ouya</title>
-    <link>http://localhost:60741/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Elvis Ouya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>jonvis113@gmail.com (Elvis Ouya)</managingEditor>
     <webMaster>jonvis113@gmail.com (Elvis Ouya)</webMaster>
     <copyright>I ❤️ TECH</copyright>
-    <lastBuildDate>Thu, 23 Oct 2025 12:36:41 +0000</lastBuildDate><atom:link href="http://localhost:60741/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Oct 2025 12:36:41 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Cloud Security through IAM Access control</title>
-      <link>http://localhost:60741/posts/cloud-security-through-iam-access-control/</link>
+      <link>http://localhost:1313/posts/cloud-security-through-iam-access-control/</link>
       <pubDate>Thu, 23 Oct 2025 12:36:41 +0000</pubDate>
       <author>jonvis113@gmail.com (Elvis Ouya)</author>
-      <guid>http://localhost:60741/posts/cloud-security-through-iam-access-control/</guid>
+      <guid>http://localhost:1313/posts/cloud-security-through-iam-access-control/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:60741/posts/cloud-security-through-iam-access-control/featured.jpg" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/cloud-security-through-iam-access-control/featured.jpg" />
     </item>
     
   </channel>
