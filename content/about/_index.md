@@ -16,25 +16,9 @@ showTableOfContents: true
 ## Summary
 Analytical professional with a strong foundation in data science and analytics, now applying that precision to cybersecurity, cloud, and network infrastructure. I actively work with SIEM tools, vulnerability assessment methodologies, and threat intelligence frameworks to identify risks before they become incidents and to help organizations build stronger, more resilient systems.
 
-## Work Experience
+## Experience
 
-
-### Safaricom PLC
-_Nairobi, Kenya_ <br>
-**`Business Intelligence Analyst`** <br>
-_September 2023 to April 2024_
-
-Although my role at Safaricom was titled Business Intelligence Analyst, my work operated with a DevSecOps and systems mindset, owning critical reporting pipelines that interfaced directly with operational databases, automated ingestion workflows, and validation layers requiring strict access control, consistency checks, and failure handling. Beyond building dashboards with Qlik Sense, SQL, and Excel, I focused on hardening data pipelines against drift and corruption, automating anomaly detection, and reducing manual intervention points that introduced operational and security risk—efforts that cut monthly reporting effort by ~80% while improving accuracy and auditability. Working cross-functionally across product and operations exposed me to real-world system failures such as misconfigurations, broken dependencies, and delayed alerts, which became the inflection point where I intentionally aligned my analytics background with cybersecurity, cloud infrastructure, and reliability engineering, using data not just to explain outcomes but to reduce risk before incidents occur.
-
-### Absa Bank Kenya
-_Nairobi, Kenya_ <br>
-**`Tech ServiceDesk Intern`** <br>
-_January 2023 to August 2023_
-
-- Spearheaded technical support initiatives and utilized data analytics to analyze incident reports and identify emerging issues.
-- Developed and maintained dynamic dashboards using PowerBI to visualize key support metrics like resolution times and user satisfaction.
-- Troubleshot and resolved hardware, software, and networking issues, maintaining a 90% user satisfaction rating.
-- Led a data-driven initiative resulting in a 30% reduction in repeat incidents and a 25% decrease in average resolution time.
+I started out as a Business Intelligence Analyst at **Safaricom PLC** (Nairobi, Sep 2023 – Apr 2024), where building dashboards in Qlik Sense, SQL, and Excel gradually pulled me into a more DevSecOps-minded way of working. I spent a lot of that time hardening reporting pipelines against drift and corruption, automating anomaly detection, and cutting monthly reporting effort by roughly 80%. Seeing those pipelines break in real time, from misconfigurations to broken dependencies and delayed alerts, is what nudged me toward cybersecurity, cloud, and reliability engineering in the first place. Before that, as a Tech ServiceDesk Intern at **Absa Bank Kenya** (Nairobi, Jan – Aug 2023), I handled hardware, software, and networking support at a 90% satisfaction rate and built PowerBI dashboards that helped drive a 30% drop in repeat incidents and a 25% faster average resolution time.
 
 ## Skills
 
@@ -78,8 +62,7 @@ _January 2023 to August 2023_
 
 
 
-** Cisco Certified Network Associate Security (CCNA) **
-**Cisco** <br>
+**Additional certifications**
 
-### Foundation Level Threat Intelligence Analyst
-**Professional Certification** <br>
+- **Cisco Certified Network Associate Security (CCNA)** <br> _Cisco_
+- **Foundation Level Threat Intelligence Analyst** <br> _Professional certification_

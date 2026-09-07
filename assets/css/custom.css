@@ -1,6 +1,18 @@
-/* ── Instrument Sans — used exclusively by the /work section ── */
+/* ── Instrument Sans — loaded via <link> in extend-head.html ── */
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-/* ── Instrument Sans — loaded via <link> in head.html, scoped to /work ── */
+
+/* ── Site-wide makeover — match the /work (VisoTech) UI ──────
+   Same font as /work everywhere, plus a floating-pill header and
+   /work-style card treatment (see the header/basic.html and
+   article-link/card.html overrides in layouts/partials/). */
+body {
+  font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+.visotech-navbar a,
+.visotech-navbar button {
+  transition: color 150ms ease, transform 150ms ease;
+}
 
 /* Credly badge styles - isolated and theme-aware */
 .credly-badge-wrapper {

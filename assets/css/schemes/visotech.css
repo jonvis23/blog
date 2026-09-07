@@ -1,0 +1,45 @@
+/* VisoTech scheme — matches the /work (VisoTech) UI: warm off-white
+   surfaces, near-black text, lime as the single accent color. Values are
+   R, G, B triplets (Blowfish composes them as rgba(var(--…), <alpha>)). */
+:root {
+  /* Body background (light mode) — the /work page's cream (#f4f1ea) */
+  --color-neutral: 244, 241, 234;
+
+  /* Warm-tinted surfaces at the light end, true gray from 400 up so body
+     text stays neutral and legible rather than tinted brown. */
+  --color-neutral-50: 248, 246, 240;   /* #f8f6f0 — card/panel bg */
+  --color-neutral-100: 240, 236, 225;  /* #f0ece1 — subtle fill */
+  --color-neutral-200: 224, 218, 201;  /* #e0dac9 — borders */
+  --color-neutral-300: 199, 190, 167;  /* #c7bea7 — stronger divider */
+  --color-neutral-400: 163, 163, 163;  /* #a3a3a3 — muted icon/text */
+  --color-neutral-500: 115, 115, 115;  /* #737373 — muted text */
+  --color-neutral-600: 82, 82, 82;     /* #525252 — body text */
+  --color-neutral-700: 64, 64, 64;     /* #404040 — darker text */
+  --color-neutral-800: 38, 38, 38;     /* #262626 — dark-mode bg */
+  --color-neutral-900: 10, 10, 10;     /* #0a0a0a — headings, near-black */
+
+  /* Primary — lime, the site's one accent color (links, tags, buttons) */
+  --color-primary-50: 247, 254, 231;   /* #f7fee7 */
+  --color-primary-100: 236, 252, 203;  /* #ecfccb */
+  --color-primary-200: 217, 249, 157;  /* #d9f99d */
+  --color-primary-300: 190, 242, 100;  /* #bef264 */
+  --color-primary-400: 163, 230, 53;   /* #a3e635 */
+  --color-primary-500: 132, 204, 22;   /* #84cc16 */
+  --color-primary-600: 101, 163, 13;   /* #65a30d */
+  --color-primary-700: 77, 124, 15;    /* #4d7c0f */
+  --color-primary-800: 63, 98, 18;     /* #3f6212 */
+  --color-primary-900: 54, 83, 20;     /* #365314 */
+
+  /* Secondary mirrors primary — /work uses lime as its only saturated
+     color, so nothing here should introduce a second competing hue. */
+  --color-secondary-50: 247, 254, 231;
+  --color-secondary-100: 236, 252, 203;
+  --color-secondary-200: 217, 249, 157;
+  --color-secondary-300: 190, 242, 100;
+  --color-secondary-400: 163, 230, 53;
+  --color-secondary-500: 132, 204, 22;
+  --color-secondary-600: 101, 163, 13;
+  --color-secondary-700: 77, 124, 15;
+  --color-secondary-800: 63, 98, 18;
+  --color-secondary-900: 54, 83, 20;
+}
