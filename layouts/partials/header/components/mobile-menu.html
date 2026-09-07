@@ -55,6 +55,31 @@
         {{ template "mobile-footer-components" . }}
       </nav>
     </div>
+    <script>
+      (function () {
+        // The header (.visotech-navbar) uses backdrop-blur for its glass
+        // look, which — per spec — makes it the containing block for any
+        // `position: fixed` descendant. That shrinks this dialog down to
+        // the header's own box instead of the full screen (it only ever
+        // covered the top ~160px instead of the viewport). Moving it to
+        // be a direct child of <body> escapes that, at the cost of the
+        // CSS peer-checked relationship, so visibility is now driven here
+        // instead of by the peer-checked: classes already on the dialog.
+        var checkbox = document.getElementById("mobile-menu-toggle");
+        var dialog = document.querySelector('[role="dialog"]');
+        if (!checkbox || !dialog || dialog.parentElement === document.body) return;
+        document.body.appendChild(dialog);
+        function sync() {
+          var open = checkbox.checked;
+          dialog.classList.toggle("invisible", !open);
+          dialog.classList.toggle("opacity-0", !open);
+          dialog.classList.toggle("visible", open);
+          dialog.classList.toggle("opacity-100", open);
+        }
+        checkbox.addEventListener("change", sync);
+        sync();
+      })();
+    </script>
   {{ end }}
 </div>
 
