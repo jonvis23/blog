@@ -595,6 +595,31 @@
 
       </nav>
     </div>
+    <script>
+      (function () {
+        
+        
+        
+        
+        
+        
+        
+        
+        var checkbox = document.getElementById("mobile-menu-toggle");
+        var dialog = document.querySelector('[role="dialog"]');
+        if (!checkbox || !dialog || dialog.parentElement === document.body) return;
+        document.body.appendChild(dialog);
+        function sync() {
+          var open = checkbox.checked;
+          dialog.classList.toggle("invisible", !open);
+          dialog.classList.toggle("opacity-0", !open);
+          dialog.classList.toggle("visible", open);
+          dialog.classList.toggle("opacity-100", open);
+        }
+        checkbox.addEventListener("change", sync);
+        sync();
+      })();
+    </script>
   
 </div>
 
