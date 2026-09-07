@@ -309,7 +309,8 @@
     
       
 <div
-  class="main-menu visotech-navbar sticky top-4 z-40 mt-4 flex items-center w-full gap-2 rounded-[1.5rem] border border-neutral-200 bg-neutral/85 px-3 py-2 shadow-[0_18px_60px_rgba(15,23,42,0.10)] backdrop-blur-xl dark:border-white/10 dark:bg-neutral-800/80 sm:px-4 sm:py-2.5">
+  class="main-menu visotech-navbar sticky top-4 z-40 mt-4 flex items-center w-full gap-2 rounded-[1.5rem] border border-neutral-200 bg-neutral/85 px-3 py-2 shadow-[0_18px_60px_rgba(15,23,42,0.10)] backdrop-blur-xl dark:border-white/10 dark:bg-neutral-800/80 sm:px-4 sm:py-2.5 transition-opacity duration-500"
+  id="main-navbar">
   
     
     
@@ -319,9 +320,10 @@
       Elvis Ouya
     </a>
   
-  <div class="flex shrink-0 items-center ms-auto">
+  <div class="flex shrink-0 items-center ms-auto gap-2">
     <div class="hidden md:flex">
-      <nav class="flex items-center gap-x-5 h-12">
+      
+<nav class="flex items-center gap-x-5 h-12">
   
     
       
@@ -412,9 +414,12 @@
 </span>
     </button>
   
+</nav>
 
-  
-    <div class="flex items-center">
+
+
+    </div>
+    
       <button
         id="appearance-switcher"
         aria-label="Dark mode switcher"
@@ -429,13 +434,7 @@
 </span>
         </div>
       </button>
-    </div>
-  
-</nav>
-
-
-
-    </div>
+    
     <div class="flex md:hidden">
       
 <div class="flex items-center h-14 gap-4">
@@ -641,6 +640,84 @@
 
 
 
+
+<script>
+  (function () {
+    var navbar = document.getElementById("main-navbar");
+    if (!navbar) return;
+
+    var FLOAT_THRESHOLD = 100; 
+    var FADE_DELAY = 3000; 
+    var FADE_DURATION = 500; 
+
+    var isFloating = false;
+    var fadeTimer = null;
+    var isHovering = false;
+
+    function applyFloatingState() {
+      var scrolled = window.scrollY > FLOAT_THRESHOLD;
+      if (scrolled === isFloating) return;
+
+      isFloating = scrolled;
+      if (scrolled) {
+        navbar.classList.add("is-floating");
+        navbar.style.opacity = "1";
+        
+        startFadeTimer();
+      } else {
+        navbar.classList.remove("is-floating");
+        navbar.style.opacity = "1";
+        
+        clearTimeout(fadeTimer);
+      }
+    }
+
+    function startFadeTimer() {
+      clearTimeout(fadeTimer);
+      if (!isHovering) {
+        fadeTimer = setTimeout(function () {
+          if (isFloating && !isHovering) {
+            navbar.style.opacity = "0";
+          }
+        }, FADE_DELAY);
+      }
+    }
+
+    
+    window.addEventListener("scroll", applyFloatingState);
+
+    
+    navbar.addEventListener("mouseenter", function () {
+      isHovering = true;
+      clearTimeout(fadeTimer);
+      navbar.style.opacity = "1";
+    });
+
+    navbar.addEventListener("mouseleave", function () {
+      isHovering = false;
+      if (isFloating) {
+        startFadeTimer();
+      }
+    });
+
+    
+    navbar.addEventListener("touchstart", function () {
+      isHovering = true;
+      clearTimeout(fadeTimer);
+      navbar.style.opacity = "1";
+    });
+
+    navbar.addEventListener("touchend", function () {
+      isHovering = false;
+      if (isFloating) {
+        startFadeTimer();
+      }
+    });
+
+    
+    applyFloatingState();
+  })();
+</script>
 
     
     <div class="relative flex flex-col grow">
