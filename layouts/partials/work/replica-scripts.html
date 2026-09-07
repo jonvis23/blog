@@ -67,6 +67,22 @@
         nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
         nav.style.zIndex = '50';
       });
+
+      // Close the dropdown once a link inside it is actually used, instead
+      // of leaving it open (covering the page) after the click navigates.
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          nav.style.display = '';
+        });
+      });
+
+      // Also close it on an outside click / tap, so it doesn't linger open
+      // if the user taps elsewhere on the page instead of a link.
+      document.addEventListener('click', function (event) {
+        if (nav.style.display !== 'flex') return;
+        if (nav.contains(event.target) || menuBtn.contains(event.target)) return;
+        nav.style.display = '';
+      });
     }
 
     document.querySelectorAll('.faq-item').forEach(function (item) {

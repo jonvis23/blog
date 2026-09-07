@@ -14,6 +14,19 @@ body {
   transition: color 150ms ease, transform 150ms ease;
 }
 
+/* Fix: Blowfish's mobile menu overlay uses a bg-{color}/{opacity} utility
+   (e.g. dark:bg-neutral-900/99) whose Tailwind-compiled fallback declaration
+   nests rgba() inside rgba() — invalid CSS, so the browser drops it and the
+   panel falls back to transparent, letting the hero photo show through
+   behind the nav links. Restated here with plain, valid rgba() so the
+   overlay is actually opaque on every browser. */
+[role="dialog"].fixed.inset-0 {
+  background-color: rgba(248, 246, 240, 0.97);
+}
+.dark [role="dialog"].fixed.inset-0 {
+  background-color: rgba(10, 10, 10, 0.99);
+}
+
 /* Credly badge styles - isolated and theme-aware */
 .credly-badge-wrapper {
   display: flex;
