@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms &amp;amp; Conditions · Elvis Ouya</title>
+<meta name="description" content="Terms of use for the VisoTech concept and demonstration page.">
+<link rel="canonical" href="https://elviso.tech/work/terms/">
+
+<script>
+  (function () {
+    var stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (e) {}
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (stored === 'dark' || (!stored && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet">
+<link rel="stylesheet" href="/work-assets/css/app.css">
+
+<style>
+  html { background-color: #f4f1ea; }
+  html.dark { background-color: #0a0a0a; }
+  body { font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif; margin: 0; }
+</style>
+
+</head>
+<body>
+  
+<div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-10">
+  <a href="/work/" class="text-xs font-black uppercase tracking-[0.22em] text-neutral-500 transition hover:text-lime-600 dark:text-neutral-400 dark:hover:text-lime-300">&larr; VisoTech</a>
+  <h1 class="mt-4 text-3xl font-black tracking-tight text-neutral-950 dark:text-white sm:text-4xl">Terms &amp; Conditions</h1>
+  <p class="mt-2 text-sm text-neutral-500 dark:text-neutral-400">Last updated: 7 September 2026</p>
+
+  <div class="mt-8 space-y-8 text-sm leading-7 text-neutral-600 dark:text-neutral-300">
+
+    <div>
+      <h2 class="text-lg font-black text-neutral-950 dark:text-white">1. What you're looking at</h2>
+      <p class="mt-2">This page (elviso.tech/work), under the name VisoTech, is a concept and demonstration showcase of a proposed point-of-sale platform. It is not currently an operating commercial product: no account can be created here, no payment is processed, and no service level or subscription exists. By using this page, you accept these terms.</p>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-black text-neutral-950 dark:text-white">2. No offer, no guarantee</h2>
+      <p class="mt-2">Descriptions of features, workflows, pricing conversations, or capabilities on this page are illustrative of a product design, not a binding offer, quotation, or guarantee that such a product currently exists, is available for purchase, or will be built as described. Anything discussed after you contact us — by email or WhatsApp — is a separate conversation, not governed by this page.</p>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-black text-neutral-950 dark:text-white">3. Intellectual property</h2>
+      <p class="mt-2">The VisoTech name, and the specific text on this page, belong to Elvis Ouya. This page's visual design and layout are used for demonstration purposes to illustrate a point-of-sale product concept and are not to be reproduced or presented as an independent commercial product by any other party.</p>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-black text-neutral-950 dark:text-white">4. Third-party services</h2>
+      <p class="mt-2">The "Request demo" form hands off to your own email application; the WhatsApp button hands off to WhatsApp, operated by Meta. Once you leave this page through either of those, your use is governed by that service's own terms, not these.</p>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-black text-neutral-950 dark:text-white">5. No warranty</h2>
+      <p class="mt-2">This page is provided "as is". We don't warrant that its content is complete, current, or error-free, and it may change or be taken down without notice.</p>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-black text-neutral-950 dark:text-white">6. Limitation of liability</h2>
+      <p class="mt-2">To the extent permitted by law, Elvis Ouya / VisoTech is not liable for any loss or damage arising from your use of this page or reliance on anything described on it. Nothing in these terms excludes a right that cannot lawfully be excluded.</p>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-black text-neutral-950 dark:text-white">7. Governing law</h2>
+      <p class="mt-2">These terms are governed by the laws of Kenya, and any dispute arising from them falls under the jurisdiction of the courts of Kenya.</p>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-black text-neutral-950 dark:text-white">8. Changes</h2>
+      <p class="mt-2">These terms may be updated as this page or the underlying VisoTech concept develops. Continued use after a change means you accept the updated terms.</p>
+    </div>
+
+    <div>
+      <h2 class="text-lg font-black text-neutral-950 dark:text-white">9. Contact</h2>
+      <p class="mt-2">Questions about these terms: <a class="font-bold text-neutral-800 underline dark:text-white" href="mailto:hello@visotech.com">hello@visotech.com</a>.</p>
+    </div>
+
+  </div>
+
+  <div class="mt-10 border-t border-neutral-200 pt-6 dark:border-white/10">
+    <a href="/work/" class="text-sm font-black text-neutral-700 transition hover:text-lime-600 dark:text-neutral-300 dark:hover:text-lime-300">&larr; Back to VisoTech</a>
+  </div>
+</div>
+
+  <script>
+  
+  
+  
+  
+  
+  function submitDemoRequest(event) {
+    event.preventDefault();
+    function val(id) {
+      var el = document.getElementById(id);
+      return el ? el.value.trim() : '';
+    }
+    var name = val('demo-name');
+    var company = val('demo-company');
+    var email = val('demo-email');
+    var whatsapp = val('demo-whatsapp');
+    var timeline = val('demo-timeline');
+    var message = val('demo-message');
+
+    var subject = 'Demo request' + (company ? ' — ' + company : name ? ' — ' + name : '');
+    var bodyLines = [
+      'Name: ' + name,
+      'Company: ' + (company || '—'),
+      'Email: ' + email,
+      'WhatsApp: ' + whatsapp,
+      'Timeline: ' + (timeline || '—'),
+      '',
+      message
+    ];
+    var mailto = 'mailto:elvisouya23@gmail.com'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = mailto;
+    return false;
+  }
+
+  (function () {
+    function setTheme(mode) {
+      document.documentElement.classList.toggle('dark', mode === 'dark');
+      try { localStorage.setItem('theme', mode); } catch (e) {}
+    }
+    var lightBtn = document.getElementById('theme-light-btn');
+    var darkBtn = document.getElementById('theme-dark-btn');
+    if (lightBtn) lightBtn.addEventListener('click', function () { setTheme('light'); });
+    if (darkBtn) darkBtn.addEventListener('click', function () { setTheme('dark'); });
+
+    var menuBtn = document.getElementById('menu-toggle');
+    var nav = document.getElementById('site-nav');
+    if (menuBtn && nav) {
+      menuBtn.addEventListener('click', function () {
+        var open = nav.style.display === 'flex';
+        nav.style.display = open ? '' : 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.insetInlineStart = '1rem';
+        nav.style.insetInlineEnd = '1rem';
+        nav.style.top = '100%';
+        nav.style.marginTop = '0.5rem';
+        nav.style.padding = '1rem 1.25rem';
+        nav.style.borderRadius = '1rem';
+        nav.style.background = document.documentElement.classList.contains('dark') ? '#0a0a0a' : '#fff';
+        nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+        nav.style.zIndex = '50';
+      });
+    }
+
+    document.querySelectorAll('.faq-item').forEach(function (item) {
+      var toggle = item.querySelector('.faq-toggle');
+      var panel = item.querySelector('.faq-panel');
+      var chevron = toggle ? toggle.querySelector('svg') : null;
+      if (!toggle || !panel) return;
+      toggle.addEventListener('click', function () {
+        var isHidden = panel.hasAttribute('hidden');
+        if (isHidden) {
+          panel.removeAttribute('hidden');
+          if (chevron) chevron.classList.add('rotate-180');
+        } else {
+          panel.setAttribute('hidden', '');
+          if (chevron) chevron.classList.remove('rotate-180');
+        }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
