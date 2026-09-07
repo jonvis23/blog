@@ -17,7 +17,9 @@ enableStructuredBreadcrumbs = false
 
 replyByEmail = false
 
-# mainSections = ["section1", "section2"]
+# Pinned so the /work case studies stay out of the homepage "Recent" list and
+# the RSS feed. Without this, Blowfish picks whichever section has most pages.
+mainSections = ["posts"]
 # robots = ""
 
 disableImageOptimization = false

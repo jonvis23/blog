@@ -1,0 +1,89 @@
+{{- /* Shared end-of-body scripts for every bare /work replica page — theme
+       toggle, mobile menu (home only has #site-nav/#menu-toggle), FAQ
+       accordion (home + restaurant-pos), and the demo-request form (home
+       only has #demo-form). Elements that don't exist on a given page are
+       simply skipped by the null checks below. */ -}}
+<script>
+  // Global (not inside the IIFE below) because the form's inline
+  // onsubmit="return submitDemoRequest(event)" needs to reach it.
+  // No backend exists behind this replica, so the request is handed to the
+  // visitor's own mail client instead — pre-addressed and pre-filled, ready
+  // to send with one click.
+  function submitDemoRequest(event) {
+    event.preventDefault();
+    function val(id) {
+      var el = document.getElementById(id);
+      return el ? el.value.trim() : '';
+    }
+    var name = val('demo-name');
+    var company = val('demo-company');
+    var email = val('demo-email');
+    var whatsapp = val('demo-whatsapp');
+    var timeline = val('demo-timeline');
+    var message = val('demo-message');
+
+    var subject = 'Demo request' + (company ? ' — ' + company : name ? ' — ' + name : '');
+    var bodyLines = [
+      'Name: ' + name,
+      'Company: ' + (company || '—'),
+      'Email: ' + email,
+      'WhatsApp: ' + whatsapp,
+      'Timeline: ' + (timeline || '—'),
+      '',
+      message
+    ];
+    var mailto = 'mailto:elvisouya23@gmail.com'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = mailto;
+    return false;
+  }
+
+  (function () {
+    function setTheme(mode) {
+      document.documentElement.classList.toggle('dark', mode === 'dark');
+      try { localStorage.setItem('theme', mode); } catch (e) {}
+    }
+    var lightBtn = document.getElementById('theme-light-btn');
+    var darkBtn = document.getElementById('theme-dark-btn');
+    if (lightBtn) lightBtn.addEventListener('click', function () { setTheme('light'); });
+    if (darkBtn) darkBtn.addEventListener('click', function () { setTheme('dark'); });
+
+    var menuBtn = document.getElementById('menu-toggle');
+    var nav = document.getElementById('site-nav');
+    if (menuBtn && nav) {
+      menuBtn.addEventListener('click', function () {
+        var open = nav.style.display === 'flex';
+        nav.style.display = open ? '' : 'flex';
+        nav.style.flexDirection = 'column';
+        nav.style.position = 'absolute';
+        nav.style.insetInlineStart = '1rem';
+        nav.style.insetInlineEnd = '1rem';
+        nav.style.top = '100%';
+        nav.style.marginTop = '0.5rem';
+        nav.style.padding = '1rem 1.25rem';
+        nav.style.borderRadius = '1rem';
+        nav.style.background = document.documentElement.classList.contains('dark') ? '#0a0a0a' : '#fff';
+        nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+        nav.style.zIndex = '50';
+      });
+    }
+
+    document.querySelectorAll('.faq-item').forEach(function (item) {
+      var toggle = item.querySelector('.faq-toggle');
+      var panel = item.querySelector('.faq-panel');
+      var chevron = toggle ? toggle.querySelector('svg') : null;
+      if (!toggle || !panel) return;
+      toggle.addEventListener('click', function () {
+        var isHidden = panel.hasAttribute('hidden');
+        if (isHidden) {
+          panel.removeAttribute('hidden');
+          if (chevron) chevron.classList.add('rotate-180');
+        } else {
+          panel.setAttribute('hidden', '');
+          if (chevron) chevron.classList.remove('rotate-180');
+        }
+      });
+    });
+  })();
+</script>

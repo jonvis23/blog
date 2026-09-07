@@ -1,0 +1,17 @@
+{{- /*
+Bare, header-free page for /work — a standalone design replica, not a page
+inside the Blowfish theme shell. Deliberately does NOT `{{ define "main" }}`
+against baseof.html: renders the entire document itself, no site header/nav/
+footer. Source content lives in content/work/_index.html (raw HTML), so
+`.Content` below is the replica's body, unprocessed by Goldmark.
+*/ -}}
+<!doctype html>
+<html lang="en">
+<head>
+  {{ partial "work/replica-head.html" . }}
+</head>
+<body>
+  {{ .Content }}
+  {{ partial "work/replica-scripts.html" . }}
+</body>
+</html>

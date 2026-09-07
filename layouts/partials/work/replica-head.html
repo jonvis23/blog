@@ -1,0 +1,27 @@
+{{- /* Shared <head> for every bare /work replica page. */ -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Title }} · {{ site.Title }}</title>
+{{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
+<link rel="canonical" href="{{ .Permalink }}">
+
+<script>
+  (function () {
+    var stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (e) {}
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (stored === 'dark' || (!stored && prefersDark)) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.bunny.net">
+<link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet">
+<link rel="stylesheet" href="/work-assets/css/app.css">
+
+<style>
+  html { background-color: #f4f1ea; }
+  html.dark { background-color: #0a0a0a; }
+  body { font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif; margin: 0; }
+</style>

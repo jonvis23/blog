@@ -1,0 +1,15 @@
+{{- /*
+Bare, header-free sub-page under /work (Restaurant POS, each sector page) —
+same shell as layouts/work/list.html, sharing its head/script partials so the
+two stay in sync. Source content is raw HTML from a content/work sub-bundle.
+*/ -}}
+<!doctype html>
+<html lang="en">
+<head>
+  {{ partial "work/replica-head.html" . }}
+</head>
+<body>
+  {{ .Content }}
+  {{ partial "work/replica-scripts.html" . }}
+</body>
+</html>
