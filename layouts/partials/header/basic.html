@@ -32,10 +32,10 @@
       {{ .Site.Title | markdownify }}
     </a>
   {{ end }}
+  <div class="hidden md:flex shrink-0 items-center gap-2">
+    {{ partial "header/components/desktop-menu.html" . }}
+  </div>
   <div class="flex shrink-0 items-center ms-auto gap-2">
-    <div class="hidden md:flex">
-      {{ partial "header/components/desktop-menu.html" . }}
-    </div>
     {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
       <button
         id="appearance-switcher"
@@ -50,7 +50,7 @@
         </div>
       </button>
     {{ end }}
-    <div class="flex md:hidden">
+    <div class="flex">
       {{ partial "header/components/mobile-menu.html" . }}
     </div>
   </div>
