@@ -1,8 +1,10 @@
 {{/* Site override of themes/blowfish/layouts/partials/header/basic.html —
      same markup, restyled as a floating rounded card (border, blur, shadow)
-     to match the /work (VisoTech) header treatment. */}}
+     to match the /work (VisoTech) header treatment. Includes scroll-based
+     float behavior and fade animation with hover persistence. */}}
 <div
-  class="main-menu visotech-navbar sticky top-4 z-40 mt-4 flex items-center w-full gap-2 rounded-[1.5rem] border border-neutral-200 bg-neutral/85 px-3 py-2 shadow-[0_18px_60px_rgba(15,23,42,0.10)] backdrop-blur-xl dark:border-white/10 dark:bg-neutral-800/80 sm:px-4 sm:py-2.5">
+  class="main-menu visotech-navbar sticky top-4 z-40 mt-4 flex items-center w-full gap-2 rounded-[1.5rem] border border-neutral-200 bg-neutral/85 px-3 py-2 shadow-[0_18px_60px_rgba(15,23,42,0.10)] backdrop-blur-xl dark:border-white/10 dark:bg-neutral-800/80 sm:px-4 sm:py-2.5 transition-opacity duration-500"
+  id="main-navbar">
   {{ if .Site.Params.Logo }}
     {{ $logo := resources.Get .Site.Params.Logo }}
     {{ if $logo }}
@@ -30,10 +32,24 @@
       {{ .Site.Title | markdownify }}
     </a>
   {{ end }}
-  <div class="flex shrink-0 items-center ms-auto">
+  <div class="flex shrink-0 items-center ms-auto gap-2">
     <div class="hidden md:flex">
       {{ partial "header/components/desktop-menu.html" . }}
     </div>
+    {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
+      <button
+        id="appearance-switcher"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base bf-icon-color-hover">
+        <div class="flex items-center justify-center dark:hidden">
+          {{ partial "icon.html" "moon" }}
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          {{ partial "icon.html" "sun" }}
+        </div>
+      </button>
+    {{ end }}
     <div class="flex md:hidden">
       {{ partial "header/components/mobile-menu.html" . }}
     </div>
@@ -85,3 +101,81 @@
     })();
   </script>
 {{ end }}
+
+<script>
+  (function () {
+    var navbar = document.getElementById("main-navbar");
+    if (!navbar) return;
+
+    var FLOAT_THRESHOLD = 100; // pixels
+    var FADE_DELAY = 3000; // milliseconds (3 seconds)
+    var FADE_DURATION = 500; // milliseconds (for CSS transition)
+
+    var isFloating = false;
+    var fadeTimer = null;
+    var isHovering = false;
+
+    function applyFloatingState() {
+      var scrolled = window.scrollY > FLOAT_THRESHOLD;
+      if (scrolled === isFloating) return;
+
+      isFloating = scrolled;
+      if (scrolled) {
+        navbar.classList.add("is-floating");
+        navbar.style.opacity = "1";
+        // Start fade timer when it becomes floating
+        startFadeTimer();
+      } else {
+        navbar.classList.remove("is-floating");
+        navbar.style.opacity = "1";
+        // Clear fade timer when it returns to top
+        clearTimeout(fadeTimer);
+      }
+    }
+
+    function startFadeTimer() {
+      clearTimeout(fadeTimer);
+      if (!isHovering) {
+        fadeTimer = setTimeout(function () {
+          if (isFloating && !isHovering) {
+            navbar.style.opacity = "0";
+          }
+        }, FADE_DELAY);
+      }
+    }
+
+    // Scroll listener
+    window.addEventListener("scroll", applyFloatingState);
+
+    // Hover / touch persistence
+    navbar.addEventListener("mouseenter", function () {
+      isHovering = true;
+      clearTimeout(fadeTimer);
+      navbar.style.opacity = "1";
+    });
+
+    navbar.addEventListener("mouseleave", function () {
+      isHovering = false;
+      if (isFloating) {
+        startFadeTimer();
+      }
+    });
+
+    // Touch support (touchstart to show, touchend to restart fade)
+    navbar.addEventListener("touchstart", function () {
+      isHovering = true;
+      clearTimeout(fadeTimer);
+      navbar.style.opacity = "1";
+    });
+
+    navbar.addEventListener("touchend", function () {
+      isHovering = false;
+      if (isFloating) {
+        startFadeTimer();
+      }
+    });
+
+    // Initial state
+    applyFloatingState();
+  })();
+</script>
