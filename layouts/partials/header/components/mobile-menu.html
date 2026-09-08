@@ -12,21 +12,6 @@
     </button>
   {{ end }}
 
-  {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
-    <button
-      id="appearance-switcher-mobile"
-      type="button"
-      aria-label="Dark mode switcher"
-      class="flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400">
-      <div class="dark:hidden">
-        {{ partial "icon.html" "moon" }}
-      </div>
-      <div class="hidden dark:block">
-        {{ partial "icon.html" "sun" }}
-      </div>
-    </button>
-  {{ end }}
-
   {{ if or
     .Site.Menus.main
     .Site.Menus.subnavigation
@@ -50,7 +35,6 @@
       </label>
       <nav class="mx-auto max-w-md space-y-6">
         {{ template "mobile-main-menu" . }}
-        {{ template "mobile-appearance-toggle" . }}
         {{ template "mobile-subnavigation" . }}
         {{ template "mobile-footer-components" . }}
       </nav>
@@ -82,37 +66,6 @@
     </script>
   {{ end }}
 </div>
-
-{{ define "mobile-appearance-toggle" }}
-  {{ if .Site.Params.footer.showAppearanceSwitcher | default false }}
-    <div class="px-2 pt-6 border-t bf-border-color">
-      <button
-        type="button"
-        id="appearance-switcher-mobile-menu"
-        class="flex w-full items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200">
-        <span class="flex items-center justify-center h-8 w-8 text-2xl">
-          <span class="dark:hidden">{{ partial "icon.html" "moon" }}</span>
-          <span class="hidden dark:block">{{ partial "icon.html" "sun" }}</span>
-        </span>
-        <span class="text-2xl font-bold tracking-tight">
-          <span class="dark:hidden">Dark mode</span>
-          <span class="hidden dark:block">Light mode</span>
-        </span>
-      </button>
-    </div>
-    <script>
-      (function () {
-        var btn = document.getElementById("appearance-switcher-mobile-menu");
-        if (!btn) return;
-        btn.addEventListener("click", function () {
-          document.documentElement.classList.toggle("dark");
-          var isDark = document.documentElement.classList.contains("dark");
-          try { localStorage.setItem("appearance", isDark ? "dark" : "light"); } catch (e) {}
-        });
-      })();
-    </script>
-  {{ end }}
-{{ end }}
 
 {{ define "mobile-main-menu" }}
   {{ range .Site.Menus.main }}
