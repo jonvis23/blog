@@ -125,6 +125,11 @@
       document.documentElement.classList.toggle('dark', mode === 'dark');
       try { localStorage.setItem('theme', mode); } catch (e) {}
     }
+    
+    try { if (!localStorage.getItem('theme')) localStorage.setItem('theme', 'light'); } catch (e) {}
+    var savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+
     var lightBtn = document.getElementById('theme-light-btn');
     var darkBtn = document.getElementById('theme-dark-btn');
     if (lightBtn) lightBtn.addEventListener('click', function () { setTheme('light'); });
