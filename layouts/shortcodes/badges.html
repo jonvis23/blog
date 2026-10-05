@@ -1,0 +1,13 @@
+{{/* Credly badge grid from data/badges.yaml. Plain images linking to the
+     verifiable Credly page; no third-party script or iframes. */}}
+<ul class="badge-grid">
+  {{ range site.Data.badges }}
+    <li>
+      <a href="https://www.credly.com/badges/{{ .id }}" target="_blank" rel="noopener noreferrer" title="Verify on Credly">
+        <img src="{{ printf "img/badges/%s.png" .id | relURL }}" alt="{{ .name }} badge" width="120" height="120" loading="lazy" class="nozoom">
+        <span class="badge-grid__name">{{ .name }}</span>
+        <span class="badge-grid__issuer">{{ .issuer }}</span>
+      </a>
+    </li>
+  {{ end }}
+</ul>

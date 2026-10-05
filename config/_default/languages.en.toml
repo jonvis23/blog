@@ -9,18 +9,20 @@ title = "Elvis Ouya"
   isoCode = "en"
   rtl = false
   dateFormat = "2 January 2006"
-  logo = "🔥"
   # secondaryLogo = "img/secondary-logo.png"
-  # description = "My awesome website"
-  copyright = "I ❤️ TECH"
+  description = "Elvis Ouya, Network Security Engineer. Hands-on writing on network security, cloud security and incident response."
+  copyright = "© { year } Elvis Ouya"
 
 [params.author]
   name = "Elvis Ouya"
   email = "jonvis113@gmail.com"
   image = "img/pfp.jpeg"
+  animeImage = "img/pfp-anime.jpg" # homepage hover/tap swap
   imageQuality = 98
   headline = "Cloud | Network | Cybersecurity"
   bio = "Security Engineer"
+  availability = "Open to security engineering opportunities" # remove to hide the badge
+  intro = "I secure cloud infrastructure and networks, and write hands-on guides about what I build along the way."
   links = [
     { email = "mailto:jonvis113@gmail.com" },
     { github = "https://github.com/jonvis23" },

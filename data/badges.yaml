@@ -1,0 +1,26 @@
+# Credly badges shown on /about. Images are stored locally in static/img/badges/
+# (named by badge ID), so the page doesn't load Credly's embed script.
+- id: 54e5c226-ae86-4598-a793-f1de14055183
+  name: Fortinet FortiGate 7.6 Operator
+  issuer: Fortinet
+- id: 12e8c514-451a-44dd-8b16-2a89671b31b8
+  name: Fortinet Certified Associate Cybersecurity
+  issuer: Fortinet
+- id: 26c09279-3f99-454f-b2f5-292054cbfb12
+  name: AWS Certified Cloud Practitioner
+  issuer: Amazon Web Services
+- id: 06c672e8-f0d0-4c02-b352-4146b59327bb
+  name: "CCNA: Introduction to Networks"
+  issuer: Cisco
+- id: b5fe1cf6-1c2e-4e45-8037-d9dd3511e910
+  name: "CCNA: Switching, Routing, and Wireless Essentials"
+  issuer: Cisco
+- id: 3115601e-a4ae-46e7-99dd-bf81f39b7f0b
+  name: ISC2 Candidate
+  issuer: ISC2
+- id: 8c6dcbbd-bde4-4053-93c0-a3d31fef7ecf
+  name: Introduction to Cybersecurity
+  issuer: Cisco
+- id: 732d0289-192c-4ae4-908e-72689b9dc0b1
+  name: AWS re/Start Graduate
+  issuer: Amazon Web Services

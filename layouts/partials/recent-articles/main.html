@@ -1,0 +1,21 @@
+{{/* Site override: section header with an inline "View all" link (standard
+     blog pattern), replacing the theme's centered heading + bottom button. */}}
+{{ if .Site.Params.homepage.showRecent | default false }}
+  <section class="home-section" aria-labelledby="recent-heading">
+    <div class="home-section__head">
+      <h2 id="recent-heading" class="home-section__title">Latest posts</h2>
+      <a class="home-section__more" href="{{ .Site.Params.homepage.showMoreLinkDest | default "/posts/" | relLangURL }}">
+        View all <span aria-hidden="true">→</span>
+      </a>
+    </div>
+    {{ if .Site.Params.homepage.cardView | default false }}
+      {{ if .Site.Params.homepage.cardViewScreenWidth }}
+        {{ partial "recent-articles/cardview-fullwidth.html" . }}
+      {{ else }}
+        {{ partial "recent-articles/cardview.html" . }}
+      {{ end }}
+    {{ else }}
+      {{ partial "recent-articles/list.html" . }}
+    {{ end }}
+  </section>
+{{ end }}
